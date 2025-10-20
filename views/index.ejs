@@ -1,0 +1,21 @@
+<!-- index.ejs -->
+<html>
+  <head>
+    <title>Homepage</title>
+  </head>
+  <body>
+    <h1>Movie Inventory</h1>
+    <p>Welcome to the Movie Inventory Application!</p>
+    <button onclick="location.href='/new'">Add New Movie</button>
+    <ol>
+      <% movies.forEach(function(movie) { %>
+        <li><%= movie.moviename %> - <%= movie.genre %> - <%= movie.director %> - <%= movie.price %></li>
+        <button>Edit</button>
+        <form action="/" method="POST" style="display:inline;">
+          <input type="hidden" name="deleteId" value="<%= movie.pk %>">
+          <button type="submit" onclick="return confirm('Delete this movie?')">Delete</button>
+        </form>
+      <% }); %>
+    </ol>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!-- index.ejs -->
+<html>
+  <head>
+    <title>New Item</title>
+  </head>
+  <body>
+    <h1>New Item</h1>
+    <button onclick="location.href='/'">Back to Home</button>
+    <form action="/new" method="POST">
+        <label for="moviename">Movie Name:</label>
+        <input type="text" id="moviename" name="moviename" required><br><br>
+
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" name="genre" required><br><br>
+
+        <label for="director">Director:</label>
+        <input type="text" id="director" name="director" required><br><br>
+
+        <label for="price">Price:</label>
+        <input type="number" step="0.01" min="0" id="price" name="price" required><br><br>
+
+        <input type="submit" value="Add Movie">
+    </form>
+  </body>
+</html>
