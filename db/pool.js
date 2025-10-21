@@ -8,5 +8,6 @@ module.exports = new Pool({
   user: process.env.PG_USER,
   database: process.env.PG_NAME,
   port: process.env.PG_PORT, // The default port
-  password: process.env.PG_PASSWORD
+  password: process.env.PG_PASSWORD,
+  ssl: { rejectUnauthorized: false } // required for Render
 });
