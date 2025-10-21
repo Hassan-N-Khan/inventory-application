@@ -3,6 +3,7 @@ const app = express();
 const path = require("node:path");
 const indexRouter = require("./routes/indexRouter");
 const newRouter = require("./routes/newRouter");
+const editRouter = require("./routes/editRouter");
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -12,6 +13,7 @@ app.set("view engine", "ejs");
 //routers
 app.use("/", indexRouter);
 app.use("/new", newRouter);
+app.use("/edit", editRouter);
 
 
 

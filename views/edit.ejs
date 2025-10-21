@@ -1,0 +1,26 @@
+<!-- index.ejs -->
+<html>
+  <head>
+    <title>Edit Item</title>
+  </head>
+  <body>
+    <h1>Edit <%= movie.moviename %></h1>
+    <button onclick="location.href='/'">Back to Home</button>
+    <form action="/edit/<%= movie.pk %>" method="POST">
+        <label for="moviename">Movie Name:</label>
+        <input type="text" id="moviename" value="<%= movie.moviename %>" name="moviename" required><br><br>
+
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" value="<%= movie.genre %>" name="genre" required><br><br>
+
+        <label for="director">Director:</label>
+        <input type="text" id="director" value="<%= movie.director %>" name="director" required><br><br>
+
+        <label for="price">Price:</label>
+        <input type="number" step="0.01" min="0" max="99.99" id="price" name="price" value="<%= movie.price %>" required><br><br>
+
+        <input type="submit" value="Edit Movie">
+    </form>
+
+  </body>
+</html>

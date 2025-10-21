@@ -7,10 +7,15 @@
     <h1>Movie Inventory</h1>
     <p>Welcome to the Movie Inventory Application!</p>
     <button onclick="location.href='/new'">Add New Movie</button>
+    <form action="/reset" method="POST" style="display:inline;">
+      <input type="hidden" name="resetId" value="reset">
+      <button type="submit" onclick="return confirm('Reset The List?')">Reset Data</button>
+    </form>
     <ol>
       <% movies.forEach(function(movie) { %>
         <li><%= movie.moviename %> - <%= movie.genre %> - <%= movie.director %> - <%= movie.price %></li>
-        <button>Edit</button>
+        <button onclick="location.href='/edit/<%= movie.pk %>'">Edit</button>
+
         <form action="/" method="POST" style="display:inline;">
           <input type="hidden" name="deleteId" value="<%= movie.pk %>">
           <button type="submit" onclick="return confirm('Delete this movie?')">Delete</button>

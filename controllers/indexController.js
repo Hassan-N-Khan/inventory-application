@@ -12,5 +12,10 @@ async function deleteItem(req, res) {
     res.redirect("/");
 }
 
+async function resetMoviesTable(req, res) {
+    await db.resetMoviesTable();
+    res.redirect("/");
+}
 
-module.exports = { showAllMovies, deleteItem };
+
+module.exports = { showAllMovies, deleteItem, resetMoviesTable };
