@@ -17,5 +17,4 @@ async function resetMoviesTable(req, res) {
     res.redirect("/");
 }
 
-
 module.exports = { showAllMovies, deleteItem, resetMoviesTable };

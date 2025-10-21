@@ -1,0 +1,26 @@
+<!-- index.ejs -->
+<html>
+  <head>
+    <title>Homepage</title>
+  </head>
+  <body>
+    <h1>Search Movie</h1>
+    <button onclick="location.href='/'">Back to Home</button>
+    <form action="/search" method="GET">
+      <label for="search">Search Movie by Title:</label>
+      <input type="text" id="search" name="search" required>
+      <input type="submit" value="search">
+    </form>
+    <% if (movies) { %>
+      <% if (movies.length === 0) { %>
+        <p>No movies found.</p>
+      <% } else { %>
+        <ol>
+          <% movies.forEach(movie => { %>
+            <li><%= movie.moviename %> - <%= movie.genre %> - <%= movie.director %> - <%= movie.price %></li>
+          <% }) %>
+        </ol>
+      <% } %>
+    <% } %>
+  </body>
+</html>

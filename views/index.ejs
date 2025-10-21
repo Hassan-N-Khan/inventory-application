@@ -11,6 +11,9 @@
       <input type="hidden" name="resetId" value="reset">
       <button type="submit" onclick="return confirm('Reset The List?')">Reset Data</button>
     </form>
+
+    <button onclick="location.href='/search'">Search Movie</button>
+
     <ol>
       <% movies.forEach(function(movie) { %>
         <li><%= movie.moviename %> - <%= movie.genre %> - <%= movie.director %> - <%= movie.price %></li>

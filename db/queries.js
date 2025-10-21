@@ -55,8 +55,14 @@ async function resetMoviesTable() {
     ('Spirited Away', 'Animation', 'Hayao Miyazaki', 8.75);`;
     await pool.query(addInitialDataQuery);
     console.log("Initial data added to movies table");
-    
 }
+
+async function searchMoviesByTitle(title) {
+    const query = `SELECT * FROM movies WHERE moviename ILIKE $1;`;
+    const values = [`%${title}%`];
+    const { rows } = await pool.query(query, values);
+    return rows;
+};
 
 
 module.exports = {
@@ -65,5 +71,6 @@ module.exports = {
     deleteMovie,
     updateMovie,
     fetchMovieById,
-    resetMoviesTable
+    resetMoviesTable,
+    searchMoviesByTitle
 };
