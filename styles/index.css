@@ -1,0 +1,87 @@
+/* General styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  margin: 0;
+  padding: 0 20px;
+}
+
+header {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Controls (buttons/form) */
+.controls {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.controls .btn {
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.controls .btn:hover {
+  transform: scale(1.05);
+}
+
+/* Button colors */
+.btn.primary { background-color: #4CAF50; color: white; }
+.btn.warning { background-color: #f39c12; color: white; }
+.btn.info { background-color: #3498db; color: white; }
+.btn.edit { background-color: #2980b9; color: white; }
+.btn.delete { background-color: #e74c3c; color: white; }
+
+/* Movie list */
+.movie-list {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+}
+
+.movie-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.movie-info {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.movie-actions button {
+  margin-left: 10px;
+}
+
+/* Empty state */
+.empty {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  margin-top: 50px;
+}

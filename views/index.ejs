@@ -1,29 +1,53 @@
 <!-- index.ejs -->
-<html>
-  <head>
-    <title>Homepage</title>
-  </head>
-  <body>
-    <h1>Movie Inventory</h1>
-    <p>Welcome to the Movie Inventory Application!</p>
-    <button onclick="location.href='/new'">Add New Movie</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Catalog</title>
+  <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <header>
+    <h1>🎬 Movie Catalog</h1>
+    <p>Manage your movie collection easily!</p>
+  </header>
+
+  <div class="controls">
+    <button class="btn primary" onclick="location.href='/new'">Add New Movie</button>
+
     <form action="/reset" method="POST" style="display:inline;">
       <input type="hidden" name="resetId" value="reset">
-      <button type="submit" onclick="return confirm('Reset The List?')">Reset Data</button>
+      <button type="submit" class="btn warning" onclick="return confirm('Reset the movie list?')">Reset List</button>
     </form>
 
-    <button onclick="location.href='/search'">Search Movie</button>
+    <button class="btn info" onclick="location.href='/search'">Search Movies</button>
+  </div>
 
-    <ol>
-      <% movies.forEach(function(movie) { %>
-        <li><%= movie.moviename %> - <%= movie.genre %> - <%= movie.director %> - <%= movie.price %></li>
-        <button onclick="location.href='/edit/<%= movie.pk %>'">Edit</button>
+  <main>
+    <h2>Your Movies</h2>
+    <% if (movies && movies.length > 0) { %>
+      <ul class="movie-list">
+        <% movies.forEach(function(movie) { %>
+          <li class="movie-item">
+            <div class="movie-info">
+              <strong><%= movie.moviename %></strong> (<%= movie.genre %>)<br>
+              Directed by <%= movie.director %> | $<%= movie.price %>
+            </div>
 
-        <form action="/" method="POST" style="display:inline;">
-          <input type="hidden" name="deleteId" value="<%= movie.pk %>">
-          <button type="submit" onclick="return confirm('Delete this movie?')">Delete</button>
-        </form>
-      <% }); %>
-    </ol>
-  </body>
+            <div class="movie-actions">
+              <button class="btn edit" onclick="location.href='/edit/<%= movie.pk %>'">Edit</button>
+
+              <form action="/" method="POST" style="display:inline;">
+                <input type="hidden" name="deleteId" value="<%= movie.pk %>">
+                <button type="submit" class="btn delete" onclick="return confirm('Delete this movie?')">Delete</button>
+              </form>
+            </div>
+          </li>
+        <% }); %>
+      </ul>
+    <% } else { %>
+      <p class="empty">No movies in your catalog yet. Add some to get started!</p>
+    <% } %>
+  </main>
+</body>
 </html>

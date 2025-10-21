@@ -11,6 +11,10 @@ app.use(express.urlencoded({ extended: true }));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+//styles
+const styleSheets = path.join(__dirname, "styles");
+app.use(express.static(styleSheets));
+
 //routers
 app.use("/", indexRouter);
 app.use("/new", newRouter);

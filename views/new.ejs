@@ -1,45 +1,55 @@
-<!-- index.ejs -->
-<html>
-  <head>
-    <title>New Item</title>
-  </head>
-  <body>
-    <h1>New Item</h1>
-    <button onclick="location.href='/'">Back to Home</button>
-    <form action="/new" method="POST">
-        <label for="moviename">Movie Name:</label>
-        <input type="text" id="moviename" name="moviename" required><br><br>
+<!-- new.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add New Movie</title>
+  <link rel="stylesheet" href="/new.css">
+</head>
+<body>
+  <header>
+    <h1>🎬 Add New Movie</h1>
+    <p>Fill out the details below to add a movie to your catalog.</p>
+  </header>
 
-        <label for="genre">Genre:</label>
-        <select id="genre" name="genre" required>
-          <option value="">-- Select Genre --</option>
-          <option value="Action">Action</option>
-          <option value="Adventure">Adventure</option>
-          <option value="Animation">Animation</option>
-          <option value="Comedy">Comedy</option>
-          <option value="Crime">Crime</option>
-          <option value="Documentary">Documentary</option>
-          <option value="Drama">Drama</option>
-          <option value="Family">Family</option>
-          <option value="Fantasy">Fantasy</option>
-          <option value="History">History</option>
-          <option value="Horror">Horror</option>
-          <option value="Music">Music</option>
-          <option value="Mystery">Mystery</option>
-          <option value="Romance">Romance</option>
-          <option value="Sci-Fi">Sci-Fi</option>
-          <option value="Thriller">Thriller</option>
-          <option value="War">War</option>
-          <option value="Western">Western</option>
-        </select><br><br>
+  <main class="form-container">
+    <button class="btn info" onclick="location.href='/'">Back to Home</button>
 
-        <label for="director">Director:</label>
-        <input type="text" id="director" name="director" required><br><br>
+    <form action="/new" method="POST" class="movie-form">
+      <label for="moviename">Movie Name:</label>
+      <input type="text" id="moviename" name="moviename" placeholder="Enter movie title" required>
 
-        <label for="price">Price:</label>
-        <input type="number" step="0.01" min="0" max="99.99" id="price" name="price" required><br><br>
+      <label for="genre">Genre:</label>
+      <select id="genre" name="genre" required>
+        <option value="">-- Select Genre --</option>
+        <option value="Action">Action</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Animation">Animation</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Crime">Crime</option>
+        <option value="Documentary">Documentary</option>
+        <option value="Drama">Drama</option>
+        <option value="Family">Family</option>
+        <option value="Fantasy">Fantasy</option>
+        <option value="History">History</option>
+        <option value="Horror">Horror</option>
+        <option value="Music">Music</option>
+        <option value="Mystery">Mystery</option>
+        <option value="Romance">Romance</option>
+        <option value="Sci-Fi">Sci-Fi</option>
+        <option value="Thriller">Thriller</option>
+        <option value="War">War</option>
+        <option value="Western">Western</option>
+      </select>
 
-        <input type="submit" value="Add Movie">
+      <label for="director">Director:</label>
+      <input type="text" id="director" name="director" placeholder="Enter director name" required>
+
+      <label for="price">Price ($):</label>
+      <input type="number" step="0.01" min="0" max="99.99" id="price" name="price" placeholder="0.00" required>
+
+      <button type="submit" class="btn primary">Add Movie</button>
     </form>
-  </body>
+  </main>
+</body>
 </html>

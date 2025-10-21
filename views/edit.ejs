@@ -1,48 +1,55 @@
-<!-- index.ejs -->
-<html>
-  <head>
-    <title>Edit Item</title>
-  </head>
-  <body>
-    <h1>Edit <%= movie.moviename %></h1>
-    <button onclick="location.href='/'">Back to Home</button>
-    <form action="/edit/<%= movie.pk %>" method="POST">
-        <label for="moviename">Movie Name:</label>
-        <input type="text" id="moviename" value="<%= movie.moviename %>" name="moviename" required><br><br>
+<!-- edit.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Movie</title>
+  <link rel="stylesheet" href="/edit.css">
+</head>
+<body>
+  <header>
+    <h1>✏️ Edit "<%= movie.moviename %>"</h1>
+    <p>Update the details of your movie below.</p>
+  </header>
 
-        <label for="genre">Genre:</label>
-        <label for="genre">Genre:</label>
-        <select id="genre" name="genre" required>
-          <option value="">-- Select Genre --</option>
-          <option value="Action" <%= movie.genre === 'Action' ? 'selected' : '' %>>Action</option>
-          <option value="Adventure" <%= movie.genre === 'Adventure' ? 'selected' : '' %>>Adventure</option>
-          <option value="Animation" <%= movie.genre === 'Animation' ? 'selected' : '' %>>Animation</option>
-          <option value="Comedy" <%= movie.genre === 'Comedy' ? 'selected' : '' %>>Comedy</option>
-          <option value="Crime" <%= movie.genre === 'Crime' ? 'selected' : '' %>>Crime</option>
-          <option value="Documentary" <%= movie.genre === 'Documentary' ? 'selected' : '' %>>Documentary</option>
-          <option value="Drama" <%= movie.genre === 'Drama' ? 'selected' : '' %>>Drama</option>
-          <option value="Family" <%= movie.genre === 'Family' ? 'selected' : '' %>>Family</option>
-          <option value="Fantasy" <%= movie.genre === 'Fantasy' ? 'selected' : '' %>>Fantasy</option>
-          <option value="History" <%= movie.genre === 'History' ? 'selected' : '' %>>History</option>
-          <option value="Horror" <%= movie.genre === 'Horror' ? 'selected' : '' %>>Horror</option>
-          <option value="Music" <%= movie.genre === 'Music' ? 'selected' : '' %>>Music</option>
-          <option value="Mystery" <%= movie.genre === 'Mystery' ? 'selected' : '' %>>Mystery</option>
-          <option value="Romance" <%= movie.genre === 'Romance' ? 'selected' : '' %>>Romance</option>
-          <option value="Sci-Fi" <%= movie.genre === 'Sci-Fi' ? 'selected' : '' %>>Sci-Fi</option>
-          <option value="Thriller" <%= movie.genre === 'Thriller' ? 'selected' : '' %>>Thriller</option>
-          <option value="War" <%= movie.genre === 'War' ? 'selected' : '' %>>War</option>
-          <option value="Western" <%= movie.genre === 'Western' ? 'selected' : '' %>>Western</option>
-        </select><br><br>
+  <main class="form-container">
+    <button class="btn info" onclick="location.href='/'">Back to Home</button>
 
+    <form action="/edit/<%= movie.pk %>" method="POST" class="movie-form">
+      <label for="moviename">Movie Name:</label>
+      <input type="text" id="moviename" value="<%= movie.moviename %>" name="moviename" required>
 
-        <label for="director">Director:</label>
-        <input type="text" id="director" value="<%= movie.director %>" name="director" required><br><br>
+      <label for="genre">Genre:</label>
+      <select id="genre" name="genre" required>
+        <option value="">-- Select Genre --</option>
+        <option value="Action" <%= movie.genre === 'Action' ? 'selected' : '' %>>Action</option>
+        <option value="Adventure" <%= movie.genre === 'Adventure' ? 'selected' : '' %>>Adventure</option>
+        <option value="Animation" <%= movie.genre === 'Animation' ? 'selected' : '' %>>Animation</option>
+        <option value="Comedy" <%= movie.genre === 'Comedy' ? 'selected' : '' %>>Comedy</option>
+        <option value="Crime" <%= movie.genre === 'Crime' ? 'selected' : '' %>>Crime</option>
+        <option value="Documentary" <%= movie.genre === 'Documentary' ? 'selected' : '' %>>Documentary</option>
+        <option value="Drama" <%= movie.genre === 'Drama' ? 'selected' : '' %>>Drama</option>
+        <option value="Family" <%= movie.genre === 'Family' ? 'selected' : '' %>>Family</option>
+        <option value="Fantasy" <%= movie.genre === 'Fantasy' ? 'selected' : '' %>>Fantasy</option>
+        <option value="History" <%= movie.genre === 'History' ? 'selected' : '' %>>History</option>
+        <option value="Horror" <%= movie.genre === 'Horror' ? 'selected' : '' %>>Horror</option>
+        <option value="Music" <%= movie.genre === 'Music' ? 'selected' : '' %>>Music</option>
+        <option value="Mystery" <%= movie.genre === 'Mystery' ? 'selected' : '' %>>Mystery</option>
+        <option value="Romance" <%= movie.genre === 'Romance' ? 'selected' : '' %>>Romance</option>
+        <option value="Sci-Fi" <%= movie.genre === 'Sci-Fi' ? 'selected' : '' %>>Sci-Fi</option>
+        <option value="Thriller" <%= movie.genre === 'Thriller' ? 'selected' : '' %>>Thriller</option>
+        <option value="War" <%= movie.genre === 'War' ? 'selected' : '' %>>War</option>
+        <option value="Western" <%= movie.genre === 'Western' ? 'selected' : '' %>>Western</option>
+      </select>
 
-        <label for="price">Price:</label>
-        <input type="number" step="0.01" min="0" max="99.99" id="price" name="price" value="<%= movie.price %>" required><br><br>
+      <label for="director">Director:</label>
+      <input type="text" id="director" value="<%= movie.director %>" name="director" required>
 
-        <input type="submit" value="Edit Movie">
+      <label for="price">Price ($):</label>
+      <input type="number" step="0.01" min="0" max="99.99" id="price" name="price" value="<%= movie.price %>" required>
+
+      <button type="submit" class="btn primary">Edit Movie</button>
     </form>
-
-  </body>
+  </main>
+</body>
 </html>

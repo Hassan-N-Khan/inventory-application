@@ -1,0 +1,99 @@
+/* General body */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  margin: 0;
+  padding: 0 20px;
+}
+
+/* Page title */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+/* Back button */
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  background-color: #3498db;
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Form styles */
+form {
+  max-width: 500px;
+  margin: 0 auto 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="submit"] {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+form input[type="text"]:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52,152,219,0.3);
+}
+
+form input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+form input[type="submit"]:hover {
+  transform: scale(1.05);
+}
+
+/* Results section */
+ol {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0;
+  list-style-position: inside;
+}
+
+li {
+  background-color: #ffffff;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Empty message */
+p {
+  text-align: center;
+  font-style: italic;
+  color: #888;
+}

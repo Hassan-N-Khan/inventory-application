@@ -1,0 +1,106 @@
+/* General body */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  margin: 0;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Container */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto 50px auto;
+  background-color: white;
+  padding: 30px 35px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* Variants */
+.btn.primary {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn.info {
+  background-color: #3498db;
+  color: white;
+}
+
+/* Form styles */
+.movie-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.movie-form label {
+  font-weight: bold;
+}
+
+.movie-form input[type="text"],
+.movie-form input[type="number"],
+.movie-form select {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  width: 100%;
+}
+
+.movie-form input[type="text"]:focus,
+.movie-form input[type="number"]:focus,
+.movie-form select:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52,152,219,0.3);
+}
+
+/* Submit button inside form */
+.movie-form button {
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.movie-form button:hover {
+  transform: scale(1.05);
+}
